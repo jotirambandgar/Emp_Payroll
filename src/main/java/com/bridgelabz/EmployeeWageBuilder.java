@@ -10,17 +10,27 @@ public class EmployeeWageBuilder {
 
         int empHR =0 ;
 
-        double empCheck = Math.floor((Math.random() * 10)) % 3;
+        int empCheck = (int) (Math.floor((Math.random() * 10)) % 3);
         System.out.println(IS_FULL_TIME);
         //full time
-        if(empCheck == IS_FULL_TIME) {
-            empHR = 8;
+//        if(empCheck == IS_FULL_TIME) {
+//            empHR = 8;
+//        }
+//        //part time
+//        if(empCheck == IS_PART_TIME){
+//            empHR = 4;
+//        }
+        switch (empCheck) {
+            case IS_FULL_TIME:
+                empHR = 8;
+                break;
+            case  IS_PART_TIME:
+                empHR = 4;
+                break;
+            default:
+                empHR = 0;
+                break;
         }
-        //part time
-        if(empCheck == IS_PART_TIME){
-            empHR = 4;
-        }
-
         int empWage = WAGE_PER_HR * empHR;
         System.out.println("Employee wage: " + empWage);
     }
